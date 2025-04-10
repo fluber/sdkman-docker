@@ -9,7 +9,7 @@ ENV JAVA_VERSION 8.0.201-oracle
 
 RUN ["mkdir", "-p", "/apps/home"] 
 RUN ls -la /apps/home
-COPY server/src/ /apps/home
+#COPY server/src/ /apps/home  #Because the docker-compose.yml alread use volumes to mapping this folder
 RUN apt-get update && apt-get install -y zip curl
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN curl -s "https://get.sdkman.io" | bash
